@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
-import { books } from '../../database/books';
+import { getBooks } from '../../database/books.ts';
 import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 import { totalNumberOfProducts } from '../_app';
 
@@ -112,7 +112,12 @@ function BookDetails({ book, setNumberOfProducts }) {
       <div css={bookDetailsContainer}>
         <div css={bookDetailsInnerContainer}>
           <div css={bookImageContainer}>
-            <Image src={`/images/${book.id}.jpg`} width="300" height="450" />
+            <Image
+              src={`/images/${book.id}.jpg`}
+              width="300"
+              height="450"
+              data-test-id="product-image"
+            />
           </div>
           <div css={bookTextContainer}>
             <div>
@@ -133,7 +138,7 @@ function BookDetails({ book, setNumberOfProducts }) {
             </div>
             <div css={priceStyle}>
               <p>
-                € <span>{book.price}</span>
+                € <span data-test-id="product-price">{book.price}</span>
               </p>
             </div>
             <p css={descriptionStyle}>{book.description}</p>
@@ -204,7 +209,7 @@ function BookDetails({ book, setNumberOfProducts }) {
 
 export default BookDetails;
 
-export function getServerSideProps(context) {
+export async function getServerSideProps(context) {
   // Getting the bookId from the URL
   const bookId = context.query.bookId;
 
@@ -214,11 +219,10 @@ export function getServerSideProps(context) {
     ? JSON.parse(context.req.cookies.cart)
     : [];
 
-  console.log(context.req.cookies.cart);
-
+  const books = await getBooks();
   // Finding the book with the id that matches the bookId in the URL
   const foundBook = books.find((book) =>
-    book.id === bookId ? book : undefined,
+    book.id.toString() === bookId ? book : undefined,
   );
 
   if (!foundBook) {

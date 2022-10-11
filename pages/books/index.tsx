@@ -1,9 +1,14 @@
 import Head from 'next/head';
 import { booksContainer, innerBooksContainer } from '../';
 import BookCard from '../../components/BookCard';
-import { books } from '../../database/books';
+import { Book, getBooks } from '../../database/books';
 
-function AllBooks({ listOfBooks, setNumberOfProducts }) {
+type Props = {
+  listOfBooks: Book[];
+  setNumberOfProducts: (totalQuantity: number) => void;
+};
+
+function AllBooks({ listOfBooks, setNumberOfProducts }: Props) {
   return (
     <>
       <Head>
@@ -29,7 +34,8 @@ function AllBooks({ listOfBooks, setNumberOfProducts }) {
 
 export default AllBooks;
 
-export function getServerSideProps() {
+export async function getServerSideProps() {
+  const books = await getBooks();
   return {
     props: {
       listOfBooks: books,

@@ -59,7 +59,11 @@ const cartContainerStyles = css`
   }
 `;
 
-function Header({ numberOfProducts }) {
+type Props = {
+  numberOfProducts: number;
+};
+
+function Header({ numberOfProducts }: Props) {
   return (
     <header css={headerStyles} data-test-id="products-link">
       <div css={innerHeaderStyles}>
@@ -83,10 +87,10 @@ function Header({ numberOfProducts }) {
           </nav>
         </div>
         <div css={cartContainerStyles}>
-          <Link href="/books/cart" data-test-id="cart-link">
+          <Link href="/cart" data-test-id="cart-link">
             <Image
               src="/images/cart-icon.png"
-              all="cart icon"
+              alt="cart icon"
               width="35"
               height="35"
             />

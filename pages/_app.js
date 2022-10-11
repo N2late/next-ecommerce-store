@@ -20,6 +20,7 @@ export function totalNumberOfProducts(setNumberOfProducts) {
 
 function MyApp({ Component, pageProps }) {
   const [numberOfProducts, setNumberOfProducts] = useState('');
+  const [order, setOrder] = useState('');
 
   useEffect(() => totalNumberOfProducts(setNumberOfProducts), []);
 
@@ -47,6 +48,8 @@ function MyApp({ Component, pageProps }) {
           {...pageProps}
           numberOfProducts={numberOfProducts}
           setNumberOfProducts={setNumberOfProducts}
+          order={order}
+          setOrder={setOrder}
         />
       </Layout>
     </>

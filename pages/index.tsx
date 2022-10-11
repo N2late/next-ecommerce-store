@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import Head from 'next/head';
 import Link from 'next/link';
 import BookCard from '../components/BookCard';
-import { books } from '../database/books';
+import { Book, getBooks } from '../database/books';
 
 const heroContainerStyles = css`
   margin-top: 120px;
@@ -73,7 +73,12 @@ const seeMoreBtn = css`
   }
 `;
 
-export default function Home({ listOfBooks, setNumberOfProducts }) {
+type Props = {
+  listOfBooks: Book[];
+  setNumberOfProducts: (totalQuantity: number) => void;
+};
+
+export default function Home({ listOfBooks, setNumberOfProducts }: Props) {
   return (
     <>
       <Head>
@@ -93,7 +98,7 @@ export default function Home({ listOfBooks, setNumberOfProducts }) {
         <div css={booksContainer}>
           <div css={innerBooksContainer}>
             {listOfBooks.map((book) =>
-              book.id < 7 ? (
+              book.id < 9 ? (
                 <BookCard
                   key={book.id}
                   book={book}
@@ -111,7 +116,8 @@ export default function Home({ listOfBooks, setNumberOfProducts }) {
   );
 }
 
-export function getServerSideProps() {
+export async function getServerSideProps() {
+  const books = await getBooks();
   return {
     props: {
       listOfBooks: books,

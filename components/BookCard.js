@@ -83,7 +83,7 @@ function BookCard({ book, setNumberOfProducts }) {
   return (
     <div css={bookCardContainer}>
       <div>
-        <Link href={`/books/${book.id}`}>
+        <Link href={`/books/${book.id}`} data-test-id={`product-${book.id}`}>
           <Image src={`/images/${book.id}.jpg`} width="160" height="238" />
         </Link>
       </div>
@@ -101,6 +101,7 @@ function BookCard({ book, setNumberOfProducts }) {
         </div>
       </Link>
       <button
+        data-test-id={`bookCard-${book.id}`}
         onClick={() => {
           const currentCookieValue = getParsedCookie('cart');
           if (!currentCookieValue) {
@@ -123,6 +124,11 @@ function BookCard({ book, setNumberOfProducts }) {
               id: book.id,
               quantity: 1,
             });
+          } else if (
+            (foundCookie.quantity === 10) |
+            (foundCookie.quantity === '10')
+          ) {
+            return foundCookie.quantity;
           } else {
             foundCookie.quantity++;
           }

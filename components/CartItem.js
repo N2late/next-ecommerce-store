@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import Image from 'next/image';
 import { useState } from 'react';
 import { totalNumberOfProducts } from '../pages/_app';
+import { updateCartCookieQtyValue } from '../utils/cartItems';
 import { getParsedCookie, setStringifiedCookie } from '../utils/cookies';
 
 const cartItemContainer = css`
@@ -53,7 +54,7 @@ function CartItem({
   const total = (parseFloat(item.price).toFixed(2) * qty).toFixed(2);
 
   return (
-    <div css={cartItemContainer}>
+    <div css={cartItemContainer} data-test-id={`cart-product-${item.id}`}>
       <div css={cardItemInnerContainer}>
         <div css={bookImageContainer}>
           <Image src={`/images/${item.id}.jpg`} width="70" height="100" />
@@ -63,6 +64,7 @@ function CartItem({
           <p>{item.author}</p>
           <div css={removeProductBtn}>
             <button
+              data-test-id={`cart-product-remove-${item.id}`}
               onClick={() => {
                 const currentCookieValue = getParsedCookie('cart');
                 const index = currentCookieValue.findIndex(
@@ -87,18 +89,12 @@ function CartItem({
         <div css={quantityStyle}>
           <label htmlFor="quantity"> </label>
           <select
-            data-test-id="product-quantity"
+            data-test-id={`cart-product-quantity-${item.id}`}
             name="quantity"
             id="quantity"
             value={qty}
             onChange={(e) => {
-              const currentCookieValue = getParsedCookie('cart');
-
-              const foundCookie = currentCookieValue.find(
-                (cookieBookObj) => cookieBookObj.id === item.id,
-              );
-              foundCookie.quantity = e.currentTarget.value;
-              setStringifiedCookie('cart', currentCookieValue);
+              updateCartCookieQtyValue(item, e.currentTarget.value);
               setQty(e.currentTarget.value);
               totalNumberOfProducts(setNumberOfProducts);
 
