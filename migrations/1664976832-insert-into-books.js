@@ -1,4 +1,4 @@
-const books = require('../database/books.cjs');
+const books = require('../database/booksDb');
 
 exports.up = async (sql) => {
   await sql`insert into books ${sql(books)}`;
