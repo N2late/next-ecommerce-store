@@ -40,13 +40,16 @@ export function Checkout({ items, setNumberOfProducts }) {
           <form onSubmit={handleSubmit} css={styles.formContainer}>
             <div css={styles.shippingDetails}>
               <div>
-                <label data-test-id="checkout-first-name">First Name</label>
+                <label data-test-id="checkout-first-name" htmlFor="firstName">
+                  First Name
+                </label>
                 <input
+                  id="firstName"
                   required
                   minLength="4"
                   maxLength="15"
                   size="25"
-                  value={checkoutDetails.firstName}
+                  value={checkoutDetails.firstName || ''}
                   onChange={(e) =>
                     setCheckoutDetails({
                       ...checkoutDetails,
