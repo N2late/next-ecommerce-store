@@ -142,6 +142,11 @@ function BookDetails({ book, setNumberOfProducts }) {
               </p>
             </div>
             <p css={descriptionStyle}>{book.description}</p>
+            <input
+              data-test-id="product-add-to-cart"
+              value={1}
+              css={{ opacity: 0 }}
+            />
             <div css={quantityStyle}>
               <label htmlFor="quantity">Quantity: </label>
               <select
