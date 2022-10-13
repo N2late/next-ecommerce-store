@@ -160,8 +160,13 @@ function BookDetails({ book, setNumberOfProducts }) {
               </select>
               <input
                 data-test-id="product-quantity"
-                value={qty || 1}
-                css={{ opacity: 0 }}
+                value={qty}
+                css={{ opacity: 1 }}
+                onChange={(e) =>
+                  e.currentTarget.value < 0
+                    ? setQty(1)
+                    : setQty(e.currentTarget.value)
+                }
               />
             </div>
             <button
