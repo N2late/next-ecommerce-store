@@ -17,6 +17,7 @@ function AllBooks({ listOfBooks, setNumberOfProducts }: Props) {
       </Head>
       <section>
         <div css={booksContainer}>
+          <h1 css={{ opacity: 0 }}>Our Books</h1>
           <div css={innerBooksContainer}>
             {listOfBooks.map((book) => (
               <BookCard
