@@ -40,14 +40,15 @@ export function Checkout({ items, setNumberOfProducts }) {
           <form onSubmit={handleSubmit} css={styles.formContainer}>
             <div css={styles.shippingDetails}>
               <div>
-                <label htmlFor="firstName">First Name</label>
+                <label htmlFor="firstName" data-test-id="checkout-first-name">
+                  First Name
+                </label>
                 <input
                   id="firstName"
                   required
                   minLength="4"
                   maxLength="15"
                   size="25"
-                  data-test-id="checkout-first-name"
                   value={checkoutDetails.firstName}
                   onChange={(e) =>
                     setCheckoutDetails({
@@ -58,14 +59,15 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label htmlFor="lastName">Last Name</label>
+                <label htmlFor="lastName" data-test-id="checkout-last-name">
+                  Last Name
+                </label>
                 <input
                   id="lastName"
                   required
                   minLength="4"
                   maxLength="15"
                   size="25"
-                  data-test-id="checkout-last-name"
                   value={checkoutDetails.lastName}
                   onChange={(e) =>
                     setCheckoutDetails({
@@ -76,7 +78,9 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email" data-test-id="checkout-email">
+                  Email
+                </label>
                 <input
                   id="email"
                   type="email"
@@ -84,7 +88,6 @@ export function Checkout({ items, setNumberOfProducts }) {
                   maxLength="40"
                   size="25"
                   required
-                  data-test-id="checkout-email"
                   value={checkoutDetails.email}
                   onChange={(e) =>
                     setCheckoutDetails({
@@ -95,14 +98,15 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label htmlFor="address">Address</label>
+                <label htmlFor="address" data-test-id="checkout-address">
+                  Address
+                </label>
                 <input
                   id="address"
                   required
                   minLength="10"
                   maxLength="100"
                   size="50"
-                  data-test-id="checkout-address"
                   value={checkoutDetails.address}
                   onChange={(e) =>
                     setCheckoutDetails({
@@ -113,14 +117,15 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label htmlFor="city">City</label>
+                <label htmlFor="city" data-test-id="checkout-city">
+                  City
+                </label>
                 <input
                   id="city"
                   minLength="2"
                   maxLength="40"
                   size="25"
                   required
-                  data-test-id="checkout-city"
                   value={checkoutDetails.city}
                   onChange={(e) =>
                     setCheckoutDetails({
@@ -131,12 +136,13 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label htmlFor="postal">Postal Code</label>
+                <label htmlFor="postal" data-test-id="checkout-postal-code">
+                  Postal Code
+                </label>
                 <input
                   id="postal"
                   required
                   size="25"
-                  data-test-id="checkout-postal-code"
                   value={checkoutDetails.postalCode}
                   onChange={(e) =>
                     setCheckoutDetails({
@@ -147,11 +153,12 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label htmlFor="country">Country</label>
+                <label htmlFor="country" data-test-id="checkout-country">
+                  Country
+                </label>
                 <input
                   id="country"
                   required
-                  data-test-id="checkout-country"
                   value={checkoutDetails.country}
                   onChange={(e) =>
                     setCheckoutDetails({
@@ -208,12 +215,16 @@ export function Checkout({ items, setNumberOfProducts }) {
                 </div>
                 <div>
                   <div css={styles.cardNumberStyle}>
-                    <label htmlFor="cardNumber">Card number</label>
+                    <label
+                      htmlFor="cardNumber"
+                      data-test-id="checkout-credit-card"
+                    >
+                      Card number
+                    </label>
                     <input
                       id="cardNumber"
                       required
                       type="number"
-                      data-test-id="checkout-credit-card"
                       value={checkoutDetails.cardNumber}
                       onChange={(e) =>
                         setCheckoutDetails({
@@ -225,12 +236,16 @@ export function Checkout({ items, setNumberOfProducts }) {
                   </div>
                   <div css={styles.expirationAndCvvStyle}>
                     <div>
-                      <label htmlFor="ExpirationDate">Expiration Date</label>
+                      <label
+                        htmlFor="ExpirationDate"
+                        data-test-id="checkout-expiration-date"
+                      >
+                        Expiration Date
+                      </label>
                       <input
                         id="ExpirationDate"
                         required
                         type="month"
-                        data-test-id="checkout-expiration-date"
                         value={checkoutDetails.ExpirationDate}
                         onChange={(e) =>
                           setCheckoutDetails({
@@ -241,14 +256,18 @@ export function Checkout({ items, setNumberOfProducts }) {
                       />
                     </div>
                     <div>
-                      <label htmlFor="securityCode">CVV</label>
+                      <label
+                        htmlFor="securityCode"
+                        data-test-id="checkout-security-code"
+                      >
+                        CVV
+                      </label>
                       <input
                         id="securityCode"
                         required
                         minLength="3"
                         maxLength="3"
                         type="number"
-                        data-test-id="checkout-security-code"
                         value={checkoutDetails.securityCode}
                         onChange={(e) =>
                           setCheckoutDetails({
