@@ -44,7 +44,6 @@ export function Checkout({ items, setNumberOfProducts }) {
                   First Name
                 </label>
                 <input
-                  id="firstName"
                   required
                   minLength="4"
                   maxLength="15"
