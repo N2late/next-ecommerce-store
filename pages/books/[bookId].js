@@ -158,6 +158,11 @@ function BookDetails({ book, setNumberOfProducts }) {
                   </option>
                 ))}
               </select>
+              <input
+                data-test-id="product-quantity"
+                value={qty || 1}
+                css={{ opacity: 0 }}
+              />
             </div>
             <button
               data-test-id="product-add-to-cart"
