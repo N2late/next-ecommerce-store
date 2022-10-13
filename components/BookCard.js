@@ -126,12 +126,13 @@ function BookCard({ book, setNumberOfProducts }) {
               id: book.id,
               quantity: 1,
             });
-          } else if (
+          } else {
+          /* else if (
             (foundCookie.quantity === 10) |
             (foundCookie.quantity === '10')
           ) {
             return foundCookie.quantity;
-          } else {
+          } */
             foundCookie.quantity++;
           }
 
