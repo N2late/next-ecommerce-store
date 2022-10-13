@@ -40,7 +40,7 @@ export function Checkout({ items, setNumberOfProducts }) {
           <form onSubmit={handleSubmit} css={styles.formContainer}>
             <div css={styles.shippingDetails}>
               <div>
-                <label htmlFor="firstName" data-test-id="checkout-first-name">
+                <label data-test-id="checkout-first-name" htmlFor="firstName">
                   First Name
                 </label>
                 <input
@@ -59,7 +59,7 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label htmlFor="lastName" data-test-id="checkout-last-name">
+                <label data-test-id="checkout-last-name" htmlFor="lastName">
                   Last Name
                 </label>
                 <input
@@ -78,7 +78,7 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label htmlFor="email" data-test-id="checkout-email">
+                <label data-test-id="checkout-email" htmlFor="email">
                   Email
                 </label>
                 <input
@@ -98,7 +98,7 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label htmlFor="address" data-test-id="checkout-address">
+                <label data-test-id="checkout-address" htmlFor="address">
                   Address
                 </label>
                 <input
@@ -117,7 +117,7 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label htmlFor="city" data-test-id="checkout-city">
+                <label data-test-id="checkout-city" htmlFor="city">
                   City
                 </label>
                 <input
@@ -136,7 +136,7 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label htmlFor="postal" data-test-id="checkout-postal-code">
+                <label data-test-id="checkout-postal-code" htmlFor="postal">
                   Postal Code
                 </label>
                 <input
@@ -153,7 +153,7 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label htmlFor="country" data-test-id="checkout-country">
+                <label data-test-id="checkout-country" htmlFor="country">
                   Country
                 </label>
                 <input
@@ -216,8 +216,8 @@ export function Checkout({ items, setNumberOfProducts }) {
                 <div>
                   <div css={styles.cardNumberStyle}>
                     <label
-                      htmlFor="cardNumber"
                       data-test-id="checkout-credit-card"
+                      htmlFor="cardNumber"
                     >
                       Card number
                     </label>
@@ -237,8 +237,8 @@ export function Checkout({ items, setNumberOfProducts }) {
                   <div css={styles.expirationAndCvvStyle}>
                     <div>
                       <label
-                        htmlFor="ExpirationDate"
                         data-test-id="checkout-expiration-date"
+                        htmlFor="ExpirationDate"
                       >
                         Expiration Date
                       </label>
@@ -257,8 +257,8 @@ export function Checkout({ items, setNumberOfProducts }) {
                     </div>
                     <div>
                       <label
-                        htmlFor="securityCode"
                         data-test-id="checkout-security-code"
+                        htmlFor="securityCode"
                       >
                         CVV
                       </label>
