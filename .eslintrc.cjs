@@ -1,3 +1,6 @@
+require('dotenv-safe').config({
+  path: './.env',
+});
 module.exports = {
   extends: ['@upleveled/upleveled'],
   /* plugins: ['@ts-safeql/eslint-plugin'],

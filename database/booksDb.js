@@ -1,4 +1,4 @@
-module.exports = [
+const books = [
   {
     name: 'When Nietzsche Wept',
     author: 'Irvin D. Yalom',
@@ -84,3 +84,4 @@ module.exports = [
     price: '25.90',
   },
 ];
+export default books;

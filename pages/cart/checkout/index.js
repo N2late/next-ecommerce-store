@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { cartCheckoutBtn, checkoutBtnContainer } from '../';
-import { getBooks } from '../../../database/books';
+import { getBooks } from '../../../database/books.ts';
 import { styles } from '../../../styles/styles';
 import { cartTotalCost, getCardItems } from '../../../utils/cartItems';
 import { deleteAllCookies } from '../../../utils/cookies';
