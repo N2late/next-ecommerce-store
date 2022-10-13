@@ -65,7 +65,7 @@ type Props = {
 
 function Header({ numberOfProducts }: Props) {
   return (
-    <header css={headerStyles} data-test-id="products-link">
+    <header css={headerStyles}>
       <div css={innerHeaderStyles}>
         <div>
           <Link href="/">
