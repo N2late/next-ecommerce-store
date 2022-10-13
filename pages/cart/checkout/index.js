@@ -40,9 +40,7 @@ export function Checkout({ items, setNumberOfProducts }) {
           <form onSubmit={handleSubmit} css={styles.formContainer}>
             <div css={styles.shippingDetails}>
               <div>
-                <label data-test-id="checkout-first-name" htmlFor="firstName">
-                  First Name
-                </label>
+                <label data-test-id="checkout-first-name">First Name</label>
                 <input
                   required
                   minLength="4"
