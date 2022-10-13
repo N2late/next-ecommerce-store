@@ -49,7 +49,7 @@ export function Checkout({ items, setNumberOfProducts }) {
                   minLength="4"
                   maxLength="15"
                   size="25"
-                  value={checkoutDetails.firstName || ''}
+                  value={checkoutDetails.firstName || ' '}
                   onChange={(e) =>
                     setCheckoutDetails({
                       ...checkoutDetails,

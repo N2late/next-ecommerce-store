@@ -146,7 +146,7 @@ function Cart({ items, setNumberOfProducts, setOrder }) {
                   css={cartCheckoutBtn}
                   onClick={() => setOrder({ ...items, cost: totalCost })}
                 >
-                  Proceed to Checkout
+                  Checkout
                 </button>
               </Link>
               <Link href="/books">Continue Shopping</Link>
