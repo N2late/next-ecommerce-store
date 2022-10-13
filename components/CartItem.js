@@ -121,7 +121,7 @@ function CartItem({
         </div>
         <div>
           <p>
-            € <span data-test-id="cart-total">{total}</span>
+            € <span>{total}</span>
           </p>
         </div>
       </div>
