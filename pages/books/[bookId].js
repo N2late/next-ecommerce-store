@@ -159,7 +159,7 @@ function BookDetails({ book, setNumberOfProducts }) {
                 ))}
               </select>
               <input
-                data-test-id="product-add-to-cart"
+                data-test-id="product-quantity"
                 value={qty || 1}
                 css={{ opacity: 0 }}
               />
