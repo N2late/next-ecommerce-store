@@ -83,8 +83,10 @@ function BookCard({ book, setNumberOfProducts }) {
   return (
     <div css={bookCardContainer}>
       <div>
-        <Link href={`/books/${book.id}`} data-test-id={`product-${book.id}`}>
-          <Image src={`/images/${book.id}.jpg`} width="160" height="238" />
+        <Link href={`/books/${book.id}`}>
+          <a data-test-id={`product-${book.id}`}>
+            <Image src={`/images/${book.id}.jpg`} width="160" height="238" />
+          </a>
         </Link>
       </div>
       <Link href={`/books/${book.id}`}>
