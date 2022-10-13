@@ -87,9 +87,14 @@ function CartItem({
           </div>
         </div>
         <div css={quantityStyle}>
+          <p
+            data-test-id={`cart-product-quantity-${item.id}`}
+            css={{ opacity: 0 }}
+          >
+            {qty}
+          </p>
           <label htmlFor="quantity"> </label>
           <select
-            data-test-id={`cart-product-quantity-${item.id}`}
             name="quantity"
             id="quantity"
             value={qty}
