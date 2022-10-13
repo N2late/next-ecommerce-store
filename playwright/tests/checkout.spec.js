@@ -4,7 +4,7 @@ test('test checkout flow, payment and thank you page', async ({ page }) => {
   await page.goto('http://localhost:3000/');
   await page.getByRole('link', { name: 'All Books' }).click();
   await expect(page).toHaveURL('http://localhost:3000/books');
-  await page.locator('div:nth-child(2) > div > span > img').click();
+  await page.locator('[data-test-id="product-2"]').click();
   await expect(page).toHaveURL('http://localhost:3000/books/2');
   await page.locator('[data-test-id="product-add-to-cart"]').click();
   await page.getByRole('img', { name: 'cart icon' }).click();
