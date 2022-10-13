@@ -81,19 +81,21 @@ function Header({ numberOfProducts }: Props) {
         <div css={navContainerStyles}>
           <nav css={navStyles}>
             <Link href="/">Home</Link>
-            <Link href="/books" data-test-id="products-link">
-              All Books
+            <Link href="/books">
+              <a data-test-id="products-link">All Books</a>
             </Link>
           </nav>
         </div>
         <div css={cartContainerStyles}>
-          <Link href="/cart" data-test-id="cart-link">
-            <Image
-              src="/images/cart-icon.png"
-              alt="cart icon"
-              width="35"
-              height="35"
-            />
+          <Link href="/cart">
+            <a data-test-id="cart-link">
+              <Image
+                src="/images/cart-icon.png"
+                alt="cart icon"
+                width="35"
+                height="35"
+              />
+            </a>
           </Link>{' '}
           <span data-test-id="cart-count">{numberOfProducts}</span>
         </div>
