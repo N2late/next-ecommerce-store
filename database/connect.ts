@@ -2,7 +2,7 @@ import { config } from 'dotenv-safe';
 import postgres from 'postgres';
 
 // This loads all evn variables from a .env file for all code after this line
-if (!process.env.FLY_IO_BUILD) config();
+if (process.env.NODE_ENV !== 'production') config();
 
 // Type needed for the connection function below
 declare module globalThis {
