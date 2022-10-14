@@ -40,22 +40,22 @@ export function Checkout({ items, setNumberOfProducts }) {
           <form onSubmit={handleSubmit} css={styles.formContainer}>
             <div css={styles.shippingDetails}>
               <div>
-                <label data-test-id="checkout-first-name">
-                  First Name
-                  <input
-                    required
-                    minLength="4"
-                    maxLength="15"
-                    size="25"
-                    value={checkoutDetails.firstName || ' '}
-                    onChange={(e) =>
-                      setCheckoutDetails({
-                        ...checkoutDetails,
-                        firstName: e.currentTarget.value,
-                      })
-                    }
-                  />
-                </label>
+                <label htmlFor="first-name">First Name</label>
+                <input
+                  data-test-id="checkout-first-name"
+                  id="first-name"
+                  required
+                  minLength="4"
+                  maxLength="15"
+                  size="25"
+                  value={checkoutDetails.firstName || ' '}
+                  onChange={(e) =>
+                    setCheckoutDetails({
+                      ...checkoutDetails,
+                      firstName: e.currentTarget.value,
+                    })
+                  }
+                />
               </div>
               <div>
                 <label data-test-id="checkout-last-name" htmlFor="lastName">
