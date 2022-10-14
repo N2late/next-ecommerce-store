@@ -138,7 +138,7 @@ function Cart({ items, setNumberOfProducts, setOrder }) {
             </div>
             <div css={totalSumContainer}>
               <h3>
-                Total €<span data-test-id="cart-total">{totalCost}</span>
+                Total €<span data-test-id="cart-total">{totalCost || '0'}</span>
               </h3>
             </div>
             <div css={checkoutBtnContainer}>
