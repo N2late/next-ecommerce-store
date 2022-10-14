@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Router from 'next/router';
 import { useEffect, useState } from 'react';
 import CartItem from '../../components/CartItem';
 import { getBooks } from '../../database/books.ts';
@@ -140,16 +141,18 @@ function Cart({ items, setNumberOfProducts, setOrder }) {
               </h3>
             </div>
             <div css={checkoutBtnContainer}>
-              <Link href="/cart/checkout">
-                <a data-test-id="cart-checkout">
-                  <button
-                    css={cartCheckoutBtn}
-                    onClick={() => setOrder({ ...items, cost: totalCost })}
-                  >
-                    Checkout
-                  </button>
-                </a>
-              </Link>
+              <button
+                data-test-id="cart-checkout"
+                css={cartCheckoutBtn}
+                onClick={() => {
+                  setOrder({ ...items, cost: totalCost });
+                  Router.push('/cart/checkout').catch((error) =>
+                    console.log(error),
+                  );
+                }}
+              >
+                Checkout
+              </button>
               <Link href="/books">Continue Shopping</Link>
             </div>
           </div>
