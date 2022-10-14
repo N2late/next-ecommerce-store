@@ -32,16 +32,91 @@ export function Checkout({ items, setNumberOfProducts }) {
           content="Shipping details and payment method"
         />
       </Head>
-      {/* <form onSubmit={handleSubmit} css={styles.formContainer}>
-        <label htmlFor="firstName">First name</label>
-        <input data-test-id="checkout-first-name" id="firstName" />{' '}
-      </form> */}
-      <div css={styles.checkoutContainer}>
+      <div style={{ marginTop: '120px' }}>
+        <h1>Checkout Details</h1>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="firstName">First name</label>
+          <input
+            data-test-id="checkout-first-name"
+            id="firstName"
+            required
+          />{' '}
+          <label htmlFor="lastName">Last name</label>
+          <input
+            data-test-id="checkout-last-name"
+            id="lastName"
+            required
+          />{' '}
+          <label htmlFor="email">Email</label>
+          <input data-test-id="checkout-email" id="email" required />{' '}
+          <label htmlFor="address">Address</label>
+          <input data-test-id="checkout-address" id="address" required />{' '}
+          <label htmlFor="city">City</label>
+          <input data-test-id="checkout-city" id="city" required />{' '}
+          <label htmlFor="postal">Postal code</label>
+          <input
+            data-test-id="checkout-postal-code"
+            id="postal"
+            required
+          />{' '}
+          <label htmlFor="country">Country</label>
+          <input data-test-id="checkout-country" id="country" required />{' '}
+          <label htmlFor="card-number">Card number</label>
+          <input
+            data-test-id="checkout-credit-card"
+            id="card-number"
+            required
+          />{' '}
+          <label htmlFor="expiration-date">Expiration date</label>
+          <input
+            data-test-id="checkout-expiration-date"
+            id="expiration-date"
+            required
+          />{' '}
+          <label htmlFor="cvv">CVV</label>
+          <input data-test-id="checkout-security-code" id="cvv" required />{' '}
+          <hr />
+          <h4>Your order</h4>
+          <div css={styles.itemsContainer}>
+            {items.map((item) => (
+              <div css={styles.itemInnerContainer} key={item.id}>
+                <div>
+                  <Image
+                    src={`/images/${item.id}.jpg`}
+                    width="25"
+                    height="42"
+                  />
+                </div>
+                <div>
+                  <p>
+                    <strong>{item.name}</strong>
+                  </p>
+                  <p>{item.author}</p>
+                </div>
+                <div>
+                  <p>Quantity: {item.quantity}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div css={styles.costContainer}>
+            <p>
+              Total: <strong>€{totalCost}</strong>
+            </p>
+          </div>
+          <div css={checkoutBtnContainer}>
+            <button css={cartCheckoutBtn} data-test-id="checkout-confirm-order">
+              Submit your order
+            </button>
+          </div>
+        </form>
+      </div>
+      {/* <div css={styles.checkoutContainer}>
         <div css={styles.cartInnerContainer}>
           <div>
             <h1>Checkout Details</h1>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} css={styles.formContainer}>
             <div css={styles.shippingDetails}>
               <div>
                 <label htmlFor="firstName">First name</label>
@@ -278,7 +353,7 @@ export function Checkout({ items, setNumberOfProducts }) {
             </div>
           </form>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
