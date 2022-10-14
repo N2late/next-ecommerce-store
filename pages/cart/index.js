@@ -141,13 +141,14 @@ function Cart({ items, setNumberOfProducts, setOrder }) {
             </div>
             <div css={checkoutBtnContainer}>
               <Link href="/cart/checkout">
-                <button
-                  data-test-id="cart-checkout"
-                  css={cartCheckoutBtn}
-                  onClick={() => setOrder({ ...items, cost: totalCost })}
-                >
-                  Checkout
-                </button>
+                <a data-test-id="cart-checkout">
+                  <button
+                    css={cartCheckoutBtn}
+                    onClick={() => setOrder({ ...items, cost: totalCost })}
+                  >
+                    Checkout
+                  </button>
+                </a>
               </Link>
               <Link href="/books">Continue Shopping</Link>
             </div>
