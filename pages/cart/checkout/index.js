@@ -32,6 +32,10 @@ export function Checkout({ items, setNumberOfProducts }) {
           content="Shipping details and payment method"
         />
       </Head>
+      <form onSubmit={handleSubmit} css={styles.formContainer}>
+        <label htmlFor="firstName">First name</label>
+        <input data-test-id="checkout-first-name" id="firstName" />{' '}
+      </form>
       <div css={styles.checkoutContainer}>
         <div css={styles.cartInnerContainer}>
           <div>
