@@ -60,10 +60,9 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label data-test-id="checkout-last-name" htmlFor="lastName">
-                  Last Name
-                </label>
+                <label htmlFor="lastName">Last Name</label>
                 <input
+                  data-test-id="checkout-last-name"
                   id="lastName"
                   required
                   minLength="4"
@@ -79,10 +78,9 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label data-test-id="checkout-email" htmlFor="email">
-                  Email
-                </label>
+                <label htmlFor="email">Email</label>
                 <input
+                  data-test-id="checkout-email"
                   id="email"
                   type="email"
                   minLength="4"
@@ -99,10 +97,9 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label data-test-id="checkout-address" htmlFor="address">
-                  Address
-                </label>
+                <label htmlFor="address">Address</label>
                 <input
+                  data-test-id="checkout-address"
                   id="address"
                   required
                   minLength="10"
@@ -118,10 +115,9 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label data-test-id="checkout-city" htmlFor="city">
-                  City
-                </label>
+                <label htmlFor="city">City</label>
                 <input
+                  data-test-id="checkout-city"
                   id="city"
                   minLength="2"
                   maxLength="40"
@@ -137,10 +133,9 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label data-test-id="checkout-postal-code" htmlFor="postal">
-                  Postal Code
-                </label>
+                <label htmlFor="postal">Postal Code</label>
                 <input
+                  data-test-id="checkout-postal-code"
                   id="postal"
                   required
                   size="25"
@@ -154,10 +149,9 @@ export function Checkout({ items, setNumberOfProducts }) {
                 />
               </div>
               <div>
-                <label data-test-id="checkout-country" htmlFor="country">
-                  Country
-                </label>
+                <label htmlFor="country">Country</label>
                 <input
+                  data-test-id="checkout-country"
                   id="country"
                   required
                   value={checkoutDetails.country}
@@ -216,13 +210,9 @@ export function Checkout({ items, setNumberOfProducts }) {
                 </div>
                 <div>
                   <div css={styles.cardNumberStyle}>
-                    <label
-                      data-test-id="checkout-credit-card"
-                      htmlFor="cardNumber"
-                    >
-                      Card number
-                    </label>
+                    <label htmlFor="cardNumber">Card number</label>
                     <input
+                      data-test-id="checkout-credit-card"
                       id="cardNumber"
                       required
                       type="number"
@@ -237,13 +227,9 @@ export function Checkout({ items, setNumberOfProducts }) {
                   </div>
                   <div css={styles.expirationAndCvvStyle}>
                     <div>
-                      <label
-                        data-test-id="checkout-expiration-date"
-                        htmlFor="ExpirationDate"
-                      >
-                        Expiration Date
-                      </label>
+                      <label htmlFor="ExpirationDate">Expiration Date</label>
                       <input
+                        data-test-id="checkout-expiration-date"
                         id="ExpirationDate"
                         required
                         type="month"
@@ -257,13 +243,9 @@ export function Checkout({ items, setNumberOfProducts }) {
                       />
                     </div>
                     <div>
-                      <label
-                        data-test-id="checkout-security-code"
-                        htmlFor="securityCode"
-                      >
-                        CVV
-                      </label>
+                      <label htmlFor="securityCode">CVV</label>
                       <input
+                        data-test-id="checkout-security-code"
                         id="securityCode"
                         required
                         minLength="3"
