@@ -47,9 +47,9 @@ export function Checkout({ items, setNumberOfProducts }) {
                   name="firstName"
                   required
                   minLength="4"
-                  maxLength="15"
+                  maxLength="25"
                   size="25"
-                  value={checkoutDetails.firstName || ' '}
+                  value={checkoutDetails.firstName}
                   onChange={(e) =>
                     setCheckoutDetails({
                       ...checkoutDetails,
