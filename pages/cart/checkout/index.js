@@ -50,11 +50,11 @@ export function Checkout({ items, setNumberOfProducts }) {
                   maxLength="25"
                   size="25"
                   placeholder="firstName"
-                  value={checkoutDetails.firstName}
+                  value={checkoutDetails.xpto}
                   onChange={(e) =>
                     setCheckoutDetails({
                       ...checkoutDetails,
-                      firstName: e.currentTarget.value,
+                      xpto: e.currentTarget.value,
                     })
                   }
                 />
