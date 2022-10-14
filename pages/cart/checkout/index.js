@@ -36,13 +36,13 @@ export function Checkout({ items, setNumberOfProducts }) {
         <label htmlFor="firstName">First name</label>
         <input data-test-id="checkout-first-name" id="firstName" />{' '}
       </form> */}
-      <div css={styles.checkoutContainer}>
-        <div css={styles.cartInnerContainer}>
+      <div>
+        <div>
           <div>
             <h1>Checkout Details</h1>
           </div>
           <form onSubmit={handleSubmit}>
-            <div css={styles.shippingDetails}>
+            <div>
               <div>
                 <label htmlFor="firstName">First name</label>
                 <input
