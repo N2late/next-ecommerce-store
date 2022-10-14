@@ -49,6 +49,7 @@ export function Checkout({ items, setNumberOfProducts }) {
                   minLength="4"
                   maxLength="25"
                   size="25"
+                  placeholder="firstName"
                   value={checkoutDetails.firstName}
                   onChange={(e) =>
                     setCheckoutDetails({
