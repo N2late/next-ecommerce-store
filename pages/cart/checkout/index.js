@@ -32,11 +32,11 @@ export function Checkout({ items, setNumberOfProducts }) {
           content="Shipping details and payment method"
         />
       </Head>
-      <form onSubmit={handleSubmit} css={styles.formContainer}>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">First name</label>
         <input data-test-id="checkout-first-name" id="firstName" />{' '}
       </form>
-      <div css={styles.checkoutContainer}>
+      {/* <div css={styles.checkoutContainer}>
         <div css={styles.cartInnerContainer}>
           <div>
             <h1>Checkout Details</h1>
@@ -46,7 +46,7 @@ export function Checkout({ items, setNumberOfProducts }) {
             <input data-test-id="checkout-first-name" id="firstName" />
             <div css={styles.shippingDetails}>
               <div>
-                {/* <label htmlFor="firstName">First name</label>
+                <label htmlFor="firstName">First name</label>
                 <input
                   data-test-id="checkout-first-name"
                   id="firstName"
@@ -63,7 +63,7 @@ export function Checkout({ items, setNumberOfProducts }) {
                       firstName: e.currentTarget.value,
                     })
                   }
-                /> */}
+                />
               </div>
               <div>
                 <label htmlFor="lastName">Last Name</label>
@@ -280,7 +280,7 @@ export function Checkout({ items, setNumberOfProducts }) {
             </div>
           </form>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
