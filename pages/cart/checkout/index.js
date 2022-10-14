@@ -44,6 +44,7 @@ export function Checkout({ items, setNumberOfProducts }) {
                 <input
                   data-test-id="checkout-first-name"
                   id="first-name"
+                  name="firstName"
                   required
                   minLength="4"
                   maxLength="15"
