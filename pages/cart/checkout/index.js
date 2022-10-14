@@ -18,7 +18,7 @@ export function Checkout({ items, setNumberOfProducts }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setCheckoutDetails({ checkoutDetails });
-    setNumberOfProducts('');
+    setNumberOfProducts(0);
     deleteAllCookies('cart');
     await router.push('/cart/checkout/thankyou');
   };
