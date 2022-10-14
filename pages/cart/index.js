@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import CartItem from '../../components/CartItem';
 import { getBooks } from '../../database/books.ts';
@@ -88,6 +88,7 @@ function Cart({ items, setNumberOfProducts, setOrder }) {
   useEffect(() => {
     cartTotalCost(listCartItems, setTotalCost);
   }, [listCartItems]);
+  const router = useRouter();
 
   return (
     <>
@@ -146,9 +147,9 @@ function Cart({ items, setNumberOfProducts, setOrder }) {
                 css={cartCheckoutBtn}
                 onClick={() => {
                   setOrder({ ...items, cost: totalCost });
-                  Router.push('/cart/checkout').catch((error) =>
-                    console.log(error),
-                  );
+                  router
+                    .push('/cart/checkout')
+                    .catch((error) => console.log(error));
                 }}
               >
                 Checkout

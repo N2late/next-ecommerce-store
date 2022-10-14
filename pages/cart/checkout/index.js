@@ -32,7 +32,11 @@ export function Checkout({ items, setNumberOfProducts }) {
           content="Shipping details and payment method"
         />
       </Head>
-      <div css={styles.checkoutContainer}>
+      <div>
+        <label htmlFor="firstName">First name</label>
+        <input data-test-id="checkout-first-name" id="firstName" />
+      </div>
+      {/* <div css={styles.checkoutContainer}>
         <div css={styles.cartInnerContainer}>
           <div>
             <h1>Checkout Details</h1>
@@ -274,7 +278,7 @@ export function Checkout({ items, setNumberOfProducts }) {
             </div>
           </form>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
