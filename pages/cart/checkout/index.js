@@ -38,10 +38,10 @@ export function Checkout({ items, setNumberOfProducts }) {
             <h1>Checkout Details</h1>
           </div>
           <form onSubmit={handleSubmit} css={styles.formContainer}>
+            <label htmlFor="firstName">First name</label>
+            <input data-test-id="checkout-first-name" id="firstName" />
             <div css={styles.shippingDetails}>
               <div>
-                <label htmlFor="firstName">First name</label>
-                <input data-test-id="checkout-first-name" id="firstName" />
                 {/* <label htmlFor="firstName">First name</label>
                 <input
                   data-test-id="checkout-first-name"
