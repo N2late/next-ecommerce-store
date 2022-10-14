@@ -85,7 +85,12 @@ function BookCard({ book, setNumberOfProducts }) {
       <div>
         <Link href={`/books/${book.id}`}>
           <a data-test-id={`product-${book.id}`}>
-            <Image src={`/images/${book.id}.jpg`} width="160" height="238" />
+            <Image
+              src={`/images/${book.id}.jpg`}
+              width="160"
+              height="238"
+              alt="Book cover"
+            />
           </a>
         </Link>
       </div>
@@ -127,7 +132,7 @@ function BookCard({ book, setNumberOfProducts }) {
               quantity: 1,
             });
           } else {
-          /* else if (
+            /* else if (
             (foundCookie.quantity === 10) |
             (foundCookie.quantity === '10')
           ) {
