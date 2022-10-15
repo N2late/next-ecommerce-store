@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -19,7 +20,7 @@ export function Checkout({ items, setNumberOfProducts }) {
     e.preventDefault();
     setCheckoutDetails({ checkoutDetails });
     setNumberOfProducts(0);
-    deleteAllCookies('cart');
+    Cookies.set('cart', '[]');
     await router.push('/cart/checkout/thankyou');
   };
 
