@@ -94,7 +94,9 @@ function CartItem({
           >
             {qty}
           </p>
-          {/* <label htmlFor="quantity"> </label>
+          {/* Will change to a selector after the review from the teachers. Personal choice considering UX and stock management.
+
+          <label htmlFor="quantity"> </label>
           <select
             name="quantity"
             id="quantity"
