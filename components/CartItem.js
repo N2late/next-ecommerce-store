@@ -87,13 +87,14 @@ function CartItem({
           </div>
         </div>
         <div css={quantityStyle}>
+          <p>Quantity</p>
           <p
             data-test-id={`cart-product-quantity-${item.id}`}
-            css={{ opacity: 0 }}
+            style={{ textAlign: 'center' }}
           >
             {qty}
           </p>
-          <label htmlFor="quantity"> </label>
+          {/* <label htmlFor="quantity"> </label>
           <select
             name="quantity"
             id="quantity"
@@ -117,7 +118,7 @@ function CartItem({
                 {i}
               </option>
             ))}
-          </select>
+          </select> */}
         </div>
         <div>
           <p>

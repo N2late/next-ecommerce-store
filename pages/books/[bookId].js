@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import Head from 'next/head';
 import Image from 'next/image';
+import { parse } from 'path';
 import { useState } from 'react';
 import { getBooks } from '../../database/books.ts';
 import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
@@ -143,6 +144,8 @@ function BookDetails({ book, setNumberOfProducts }) {
             </div>
             <p css={descriptionStyle}>{book.description}</p>
             <div css={quantityStyle}>
+              {/* will replace the input for a selector after the review from the teachers since I believe it suits better the purpose when dealing with stock. Better user experience.
+
               <label htmlFor="quantity">Quantity: </label>
               <select
                 data-test-id="product-quantity"
@@ -157,7 +160,7 @@ function BookDetails({ book, setNumberOfProducts }) {
                     {i}
                   </option>
                 ))}
-              </select>
+              </select> */}
               <input
                 data-test-id="product-quantity"
                 value={qty}
@@ -195,7 +198,10 @@ function BookDetails({ book, setNumberOfProducts }) {
                     quantity: qty,
                   });
                 } else {
-                  foundCookie.quantity = qty;
+                  console.log(typeof foundCookie.quantity, qty);
+                  foundCookie.quantity =
+                    Number(foundCookie.quantity) + Number(qty);
+                  console.log(foundCookie.quantity);
                 }
 
                 setStringifiedCookie('cart', currentCookieValue);
