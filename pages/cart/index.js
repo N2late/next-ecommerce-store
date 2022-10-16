@@ -90,7 +90,7 @@ function Cart({
   setTotalCost,
 }) {
   const [listCartItems, setListCartItems] = useState(items);
-
+  console.log(listCartItems);
   useEffect(() => {
     cartTotalCost(listCartItems, setTotalCost);
   }, [listCartItems, setTotalCost]);
