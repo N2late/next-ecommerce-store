@@ -7,9 +7,8 @@ import { cartCheckoutBtn, checkoutBtnContainer } from '../';
 import { getBooks } from '../../../database/books.ts';
 import { styles } from '../../../styles/styles';
 import { cartTotalCost, getCardItems } from '../../../utils/cartItems';
-import { deleteAllCookies } from '../../../utils/cookies';
 
-export function Checkout({ items, setNumberOfProducts }) {
+export function Checkout({ items, setNumberOfProducts, setTotalCost }) {
   const [checkoutDetails, setCheckoutDetails] = useState({});
 
   const router = useRouter();
@@ -21,6 +20,7 @@ export function Checkout({ items, setNumberOfProducts }) {
     setCheckoutDetails({ checkoutDetails });
     setNumberOfProducts(0);
     Cookies.set('cart', '[]');
+    setTotalCost(0);
     await router.push('/cart/checkout/thankyou');
   };
 

@@ -82,12 +82,18 @@ export const cartCheckoutBtn = css`
   }
 `;
 
-function Cart({ items, setNumberOfProducts, setOrder }) {
+function Cart({
+  items,
+  setNumberOfProducts,
+  setOrder,
+  totalCost,
+  setTotalCost,
+}) {
   const [listCartItems, setListCartItems] = useState(items);
-  const [totalCost, setTotalCost] = useState('');
+
   useEffect(() => {
     cartTotalCost(listCartItems, setTotalCost);
-  }, [listCartItems]);
+  }, [listCartItems, setTotalCost]);
   const router = useRouter();
 
   return (
