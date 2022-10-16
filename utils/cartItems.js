@@ -38,6 +38,9 @@ export function updateCartCookieQtyValue(item, qty) {
 }
 
 export function cartTotalCost(items, setTotalCost = () => {}) {
+  if (items.length === 0) {
+    return 0;
+  }
   const totalCost = items.reduce(
     (prev, curr) => prev + parseInt(curr.quantity) * parseFloat(curr.price),
     0,
