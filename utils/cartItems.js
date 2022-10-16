@@ -37,8 +37,8 @@ export function updateCartCookieQtyValue(item, qty) {
   setStringifiedCookie('cart', currentCookieValue);
 }
 
-export function cartTotalCost(items, setTotalCost = () => {}) {
-  if (items.length === 0) {
+export function cartTotalCost(items = 0, setTotalCost = () => {}) {
+  if (items === 0) {
     return 0;
   }
   const totalCost = items.reduce(
@@ -46,5 +46,6 @@ export function cartTotalCost(items, setTotalCost = () => {}) {
     0,
   );
   setTotalCost(totalCost.toFixed(2));
+  console.log(typeof totalCost);
   return totalCost.toFixed(2);
 }
