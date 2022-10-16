@@ -14,13 +14,16 @@ const cartInnerContainer = css`
     padding: 20px;
   }
 `;
-function OrderSubmitted() {
+function OrderSubmitted({ totalCost }) {
   return (
     <>
       <Head>
         <title>Thank you for your order</title>
         <meta name="description" content="thank you for buying with us" />
       </Head>
+      <h3>
+        Total €<span data-test-id="cart-total">{totalCost}</span>
+      </h3>
       <div css={styles.checkoutContainer}>
         <div css={cartInnerContainer}>
           <div>The books are on your way!</div>
