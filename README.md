@@ -38,7 +38,7 @@
 - Deploy to Fly.io
 - Create a readme
 
-## Setup instructions
+## Setup
 
 Clone the repository and install all dependencies
 
@@ -48,3 +48,54 @@ cd next-ecommerce-store
 yarn
 ```
 
+Setup a database with postgres on your computer:
+
+```bash
+psql <login>
+CREATE DATABASE <database name>;
+CREATE USER <username> WITH ENCRYPTED PASSWORD '<pw>';
+GRANT ALL PRIVILEGES ON DATABASE <database name> TO <user name>;
+```
+
+Create a .env file with the environmental variables mentioned in the .env.example file.
+
+Use migrations:
+
+To add books table and insert books:
+
+```bash
+yarn migrate up 
+```
+
+To remove books and table:
+
+```bash
+yarn migrate down
+```
+
+# Deployment
+
+1. Sign up on [Fly.io](https://fly.io/)
+2. On the Fly.io Tokens page, generate a new Fly.io access token named GitHub Actions Deploy Token and copy it from the text box that appears - it will only be shown once
+3. In your GitHub repo under Settings → Secrets → Actions, click the New repository secret button at the top right of the page and create a new token with the name FLY_API_TOKEN and the token you copied as the secret.
+4. On the command line, log in to Fly.io using the following command and enter your credentials in the browser window that appears:
+```bash
+flyctl auth login
+```
+5. Create an app, specifying the name using only lowercase letters and dashes:
+```bash
+flyctl apps create --name <app name>
+```
+6. The confi files needed to deploy to Fly are already part of this repo. In the fly.toml change the name of the app to the same name you gave in fly.io.
+7. Add database credentials using Fly.io secrets (the credentials will be randomly generated for security):
+```bash
+flyctl secrets set PGHOST=localhost PGDATABASE=$(openssl rand -hex 16) PGUSERNAME=upleveled$(openssl rand -hex 16) PGPASSWORD=$(openssl rand -base64 32)
+```
+8. Create a 1GB volume for the PostgreSQL database in the Frankfurt region:
+```bash
+flyctl volumes create postgres --size 1 --region fra
+```
+9. Deploy the first version of the app:
+```bash
+flyctl deploy
+```
