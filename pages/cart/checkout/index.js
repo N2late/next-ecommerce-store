@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import Cookies from 'js-cookie';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -7,6 +8,27 @@ import { cartCheckoutBtn, checkoutBtnContainer } from '../';
 import { getBooks } from '../../../database/books.ts';
 import { styles } from '../../../styles/styles';
 import { cartTotalCost, getCardItems } from '../../../utils/cartItems';
+
+const containerStyles = css`
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 120px;
+  text-align: center;
+`;
+
+const formStyles = css`
+  padding: 20px;
+  text-align: left;
+  label {
+    margin-right: 8px;
+  }
+  input {
+    margin-right: 16px;
+    padding: 5px;
+    margin-bottom: 12px;
+  }
+`;
 
 export function Checkout({ items, setNumberOfProducts, setTotalCost }) {
   const [checkoutDetails, setCheckoutDetails] = useState({});
@@ -33,9 +55,9 @@ export function Checkout({ items, setNumberOfProducts, setTotalCost }) {
           content="Shipping details and payment method"
         />
       </Head>
-      <div style={{ marginTop: '120px' }}>
+      <div css={containerStyles}>
         <h1>Checkout Details</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} css={formStyles}>
           <label htmlFor="firstName">First name</label>
           <input
             data-test-id="checkout-first-name"
