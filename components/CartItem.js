@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import Image from 'next/image';
 import { useState } from 'react';
 import { totalNumberOfProducts } from '../pages/_app';
-import { updateCartCookieQtyValue } from '../utils/cartItems';
+// import { updateCartCookieQtyValue } from '../utils/cartItems'; // will need this after the review for the logic I would like to have on the cart page.
 import { getParsedCookie, setStringifiedCookie } from '../utils/cookies';
 
 const cartItemContainer = css`
@@ -42,7 +42,8 @@ const removeProductBtn = css`
 
 const quantityStyle = css``;
 
-const quantities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// Will use this on my selector quantity after the review
+// const quantities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function CartItem({
   item,
@@ -50,8 +51,8 @@ function CartItem({
   setListCartItems,
   listCartItems,
 }) {
-  const [qty, setQty] = useState(item.quantity);
-  const total = (parseFloat(item.price).toFixed(2) * qty).toFixed(2);
+  // const [qty, setQty] = useState(item.quantity); // Will need the the setQty with the logic I want to use after the review.
+  const total = (parseFloat(item.price).toFixed(2) * item.quantity).toFixed(2); // will need to replace the item.quantity for the qty state after the review.
 
   return (
     <div css={cartItemContainer} data-test-id={`cart-product-${item.id}`}>
@@ -92,7 +93,7 @@ function CartItem({
             data-test-id={`cart-product-quantity-${item.id}`}
             style={{ textAlign: 'center' }}
           >
-            {qty}
+            {item.quantity}
           </p>
           {/* Will change to a selector after the review from the teachers. Personal choice considering UX and stock management.
 

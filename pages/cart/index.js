@@ -112,11 +112,7 @@ function Cart({
               <h2>There are no items in your cart</h2>
             </div>
             <h3>
-              Total €
-              <span data-test-id="cart-total">
-                {totalCost > 0 ? totalCost : 0}
-                {console.log(typeof totalCost)}
-              </span>
+              Total €<span data-test-id="cart-total">{0}</span>
             </h3>
             <br />
             <Link href="/books">Continue Shopping</Link>
@@ -132,6 +128,7 @@ function Cart({
                   deleteAllCookies('cart');
                   setNumberOfProducts('');
                   setListCartItems([]);
+                  setTotalCost(0);
                 }}
               >
                 {' '}

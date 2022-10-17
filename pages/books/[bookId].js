@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { parse } from 'path';
 import { useState } from 'react';
 import { getBooks } from '../../database/books.ts';
 import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
@@ -103,7 +102,7 @@ export const cartBtn = css`
 
 function BookDetails({ book, setNumberOfProducts }) {
   const [qty, setQty] = useState(book.quantity);
-  const quantities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  // const quantities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // will need this after the review for the logic I would like to implement. This mimics the stock that ideally would come from the database.
   return (
     <>
       <Head>
