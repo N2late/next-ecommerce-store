@@ -42,9 +42,9 @@
 
 Clone the repository and install all dependencies
 
-´´´bash
+```bash
 git clone https://github.com/N2late/next-ecommerce-store.git
 cd next-ecommerce-store
 yarn
-´´´
+```
 
