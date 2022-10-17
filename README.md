@@ -4,6 +4,9 @@
  
  ![Screenshot](https://raw.githubusercontent.com/N2late/next-ecommerce-store/main/public/images/store_screenshot.png?raw=true)
 
+![Screenshot](https://github.com/N2late/next-ecommerce-store/blob/main/public/images/store_screenshot_2.png?raw=true)
+
+![Screenshot](https://github.com/N2late/next-ecommerce-store/blob/main/public/images/store_screenshot_3.png?raw=true)
 ## Technologies
 
 - Next.js
