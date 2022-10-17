@@ -90,7 +90,7 @@ function Cart({
   setTotalCost,
 }) {
   const [listCartItems, setListCartItems] = useState(items);
-
+  console.log(listCartItems);
   useEffect(() => {
     cartTotalCost(listCartItems, setTotalCost);
   }, [listCartItems, setTotalCost]);
@@ -111,6 +111,13 @@ function Cart({
             <div>
               <h2>There are no items in your cart</h2>
             </div>
+            <h3>
+              Total €
+              <span data-test-id="cart-total">
+                {totalCost > 0 ? totalCost : 0}
+                {console.log(typeof totalCost)}
+              </span>
+            </h3>
             <br />
             <Link href="/books">Continue Shopping</Link>
           </div>

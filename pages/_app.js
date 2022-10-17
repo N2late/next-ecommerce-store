@@ -21,7 +21,7 @@ export function totalNumberOfProducts(setNumberOfProducts) {
 function MyApp({ Component, pageProps }) {
   const [numberOfProducts, setNumberOfProducts] = useState('');
   const [order, setOrder] = useState('');
-  const [totalCost, setTotalCost] = useState('');
+  const [totalCost, setTotalCost] = useState(0);
 
   useEffect(() => totalNumberOfProducts(setNumberOfProducts), []);
 
