@@ -14,6 +14,8 @@ test('test checkout flow, payment and thank you page', async ({ page }) => {
   await page.locator('[data-test-id="checkout-first-name"]').click();
   await page.locator('[data-test-id="checkout-first-name"]').fill('Cristiano');
   await page.locator('[data-test-id="checkout-first-name"]').press('Tab');
+  await page.locator('[data-test-id="checkout-confirm-order"]').click();
+  await expect(page).toHaveURL('http://localhost:3000/cart/checkout');
   await page.locator('[data-test-id="checkout-last-name"]').fill('Ronaldo');
   await page.locator('[data-test-id="checkout-last-name"]').press('Tab');
   await page
@@ -35,9 +37,13 @@ test('test checkout flow, payment and thank you page', async ({ page }) => {
     .fill('123545676345');
   await page.locator('[data-test-id="checkout-expiration-date"]').click();
   await page.locator('[data-test-id="checkout-expiration-date"]').press('Tab');
+  await page.locator('[data-test-id="checkout-confirm-order"]').click();
+  await expect(page).toHaveURL('http://localhost:3000/cart/checkout');
   await page
     .locator('[data-test-id="checkout-expiration-date"]')
     .fill('2030-01');
+  await page.locator('[data-test-id="checkout-confirm-order"]').click();
+  await expect(page).toHaveURL('http://localhost:3000/cart/checkout');
   await page.locator('[data-test-id="checkout-security-code"]').click();
   await page.locator('[data-test-id="checkout-security-code"]').fill('123');
   await page.locator('[data-test-id="checkout-confirm-order"]').click();
