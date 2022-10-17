@@ -1,6 +1,8 @@
 # Next.js E-commerce Store
  A mockup E-commerce Store build with Next.js as part of one of the projects for the Upleveled Bootcamp. 
  In this project you can buy books of different genres, add them to your cart, confirm que cart items and total, checkout your order with the shipping and cart details  and finish the process with a thank you page. 
+ 
+ (./public/images/store_screenshot.png)
 
 ## Technologies
 
