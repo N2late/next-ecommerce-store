@@ -197,10 +197,8 @@ function BookDetails({ book, setNumberOfProducts }) {
                     quantity: qty,
                   });
                 } else {
-                  console.log(typeof foundCookie.quantity, qty);
                   foundCookie.quantity =
                     Number(foundCookie.quantity) + Number(qty);
-                  console.log(foundCookie.quantity);
                 }
 
                 setStringifiedCookie('cart', currentCookieValue);
