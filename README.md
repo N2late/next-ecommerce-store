@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js E-commerce Store
+ A mockup E-commerce Store build with Next.js as part of one of the projects for the Upleveled Bootcamp. 
+ In this project you can buy books of different genres, add them to your cart, confirm que cart items and total, checkout your order with the shipping and cart details  and finish the process with a thank you page. 
 
-## Getting Started
+## Technologies
 
-First, run the development server:
+- Next.js
+- TypeScript
+- Emotion
+- PostgresSQL
+- Ley
+- Jest
+- Playwright
+- GitHub Workflows
+- Fly.io 
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Main Requirements for the Project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Design and develop an ecommerce store using Next.js.
+- A Products page (where all the products are listed)
+- A page for each single product (when you click on the product it goes to this page) with ability to add a quantity to the cart
+- A Cart page (containing a list where products appear when you click on the "Add to cart" button on the single product page), which also shows the total price of all products
+- A Checkout page which shows the total and asks for shipping and payment information (when you click on the "Checkout" button on the Cart page it navigates to the checkout page)
+- A Thank You page after a checkout has been completed
+- A header with a link to the Cart, showing the number of items in the cart
+- Use a cookie called "cart" to store information about what the user has added to their cart
+- Create a PostgreSQL database and table(s)
+- Connect to and query information from this database
+- Write at least 2 pages and 2 components in TypeScript or JSDoc
+- E2E: Add to cart, change quantity and remove from cart
+- E2E: Checkout flow, payment page, thank you page
+- Unit: Test functions for adding and removing info from cookie
+- Unit: Test function for updating quantity in item of cookie (eg. adding an item to the cart that already exists)
+- Unit: Test cart sum function
+- Set up GitHub Actions to automatically test your code
+- Add titles to all pages (SEO)
+- Add meta descriptions to all pages (SEO)
+- Deploy to Fly.io
+- Create a readme
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Setup instructions
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Clone the repository and install all dependencies
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+´´´bash
+git clone https://github.com/N2late/next-ecommerce-store.git
+cd next-ecommerce-store
+yarn
+´´´
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
