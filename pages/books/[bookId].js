@@ -102,7 +102,7 @@ export const cartBtn = css`
 
 function BookDetails({ book, setNumberOfProducts }) {
   const [qty, setQty] = useState(book.quantity);
-  // const quantities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // will need this after the review for the logic I would like to implement. This mimics the stock that ideally would come from the database.
+  const quantities = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // will need this after the review for the logic I would like to implement. This mimics the stock that ideally would come from the database.
   return (
     <>
       <Head>
@@ -143,8 +143,6 @@ function BookDetails({ book, setNumberOfProducts }) {
             </div>
             <p css={descriptionStyle}>{book.description}</p>
             <div css={quantityStyle}>
-              {/* will replace the input for a selector after the review from the teachers since I believe it suits better the purpose when dealing with stock. Better user experience.
-
               <label htmlFor="quantity">Quantity: </label>
               <select
                 data-test-id="product-quantity"
@@ -159,17 +157,7 @@ function BookDetails({ book, setNumberOfProducts }) {
                     {i}
                   </option>
                 ))}
-              </select> */}
-              <input
-                data-test-id="product-quantity"
-                value={qty}
-                css={{ opacity: 1 }}
-                onChange={(e) =>
-                  e.currentTarget.value < 0
-                    ? setQty(1)
-                    : setQty(e.currentTarget.value)
-                }
-              />
+              </select>
             </div>
             <button
               data-test-id="product-add-to-cart"

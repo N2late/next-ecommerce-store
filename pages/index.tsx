@@ -9,13 +9,14 @@ const heroContainerStyles = css`
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 500px;
+  height: 400px;
 `;
 
 const innerHeroStyles = css`
   border-radius: 5px;
   background-image: url('/images/hero.jpg');
   background-repeat: no-repeat;
+  background-position: 10% 40%;
   background-size: 100%;
   width: 80%;
   text-align: end;
@@ -31,10 +32,8 @@ const innerHeroStyles = css`
 const titleStyles = css`
   font-size: 5rem;
   color: #47b5ff;
-  font-family: cursive;
+  font-family: sans-serif;
   font-weight: bold;
-  text-align: start;
-  margin-left: 160px;
 `;
 
 export const booksContainer = css`
